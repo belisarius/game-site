@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Games</title>
+	<link href="http://belisarius.github.io/game-site//atom.xml" rel="self"/>
+	<link href="http://belisarius.github.io/game-site/"/>
+	<updated>2014-02-15T06:31:53.233Z</updated>
+	<id>http://belisarius.github.io/game-site/</id>
+	<author>
+		<name>Ben Bateman</name>
+		<email>me@benspants.com</email>
+	</author>
+
+	
+		<entry>
+			<title>AutotHotKey and Localization</title>
+			<link href="http://belisarius.github.io/game-site///posts/autohotkey-and-localization"/>
+			<updated>2014-02-18T08:00:00.000Z</updated>
+			<id>http://belisarius.github.io/game-site///posts/autohotkey-and-localization</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;AutotHotKey and Localization | Games&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Ben writes stuff for a living, mostly for video games, so here he's going to write some stuff ABOUT games.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;video games, writing, thoughts, games, ben bateman&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Ben Bateman&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.63.3&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+		&lt;link rel=&quot;shortcut icon&quot; href=&quot;images/icons/favicon.ico&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;images/icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;images/icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;images/icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;images/icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/twitter-bootstrap.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/foundation.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- Menu --&gt;
+	&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;navbar-header&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;/button&gt;
+				&lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Games&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+				&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;&lt;!--/.navbar-collapse --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Content --&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;!-- Content --&gt;
+		&lt;section id=&quot;content&quot; class=&quot;content&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post clearfix&quot;&gt;
+	&lt;h1&gt;AutotHotKey and Localization&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;p&gt;Many years ago, one of my co-workers at &lt;a href=&quot;http://www.aksysgames.com&quot; title=&quot;Aksys Games Localization, Inc.&quot;&gt;Aksys&lt;/a&gt; introdced me to a piece of software called &lt;a href=&quot;http://www.autohotkey.com&quot;&gt;AutoHotKey&lt;/a&gt;. The simple description of &lt;abbr title=&quot;AutoHotKey&quot;&gt;AHK&lt;/abbr&gt; is that it&amp;#39;s a very simple scripting language that gives you simple access to a lot of stuff, most importantly stuff like keypresses.&lt;/p&gt;
+&lt;p&gt;After discovering AHK, I&amp;#39;ve found it to be indispensible for my localization work. There are a lot of tasks that it can easily automate, which speeds up my work and reduces the chance for errors. For instance, here&amp;#39;s one of the scripts I wrote for my current project:&lt;/p&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;autohotkey&quot;&gt;&lt;span class=&quot;hljs-label&quot;&gt;#j::&lt;/span&gt;
+SendInput, ^{Left}
+&lt;span class=&quot;hljs-keyword&quot;&gt;Return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Basically, when I press Windows+j, AHK tells windows I pressed Control+&amp;#8592;. This jumps the cursor to the beginning of the current word. That might not seem all that interesting in and of itself (after all, I could just press Control+&amp;#8592;), but I combine it with two other scripts that make it much more useful in the context of localization editing.&lt;/p&gt;
+&lt;p&gt;As anyone who&amp;#39;s done video game localization knows, practically every project will have character limits. As you might guess, these are limits on how many characters (i.e. letters, numbers, punctuation marks, etc) you can have in a given section of text. Sometimes, especially when a game uses a &lt;a href=&quot;http://courses.engr.illinois.edu/ece390/resources/varfont/varfont.html&quot;&gt;variable-width font&lt;/a&gt; this is based soley on space, and you often have to eyeball how much space you have (always stressful), but much more frequently you&amp;#39;re given a set number that defines how many characters you can have per line. &lt;/p&gt;
+&lt;p&gt;Since most translation and editing is done in Excel, sometimes you can just use &lt;code&gt;LEN()&lt;/code&gt; and get the number of characters that way, but usually multiple lines are squished into a cell, and then &lt;code&gt;LEN()&lt;/code&gt; won&amp;#39;t work, since it just counts &lt;em&gt;all&lt;/em&gt; the characters in the cell. You can count characters by pressing &amp;#8594; and counting how many times, but since character limits can range between 20 and 50 characters, that gets old fast. Plus, once you&amp;#39;ve counted all your characters, you need to insert something that indicates a new line, whether that&amp;#39;s a hard return or something like &lt;code&gt;/n&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Enter AutoHotKey!&lt;/p&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;autohotkey&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;; This is for counting characters (38) in this case.&lt;/span&gt;
+&lt;span class=&quot;hljs-label&quot;&gt;#h::&lt;/span&gt; &lt;span class=&quot;hljs-comment&quot;&gt;; This sets the shortcut key combination—in this case, it's Windows key (#) and h.&lt;/span&gt;
+SendInput, {Right &lt;span class=&quot;hljs-number&quot;&gt;38&lt;/span&gt;} &lt;span class=&quot;hljs-comment&quot;&gt;; &quot;SendInput&quot; basically means &quot;send this key or key combination&quot;. &quot;{Right 38}&quot; means the right arrow key, and to send it 38 times (the number of characters I'm allowed per line.)&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;Return&lt;/span&gt; &lt;span class=&quot;hljs-comment&quot;&gt;; End each snippet with &quot;Return&quot; or it'll just keep running.&lt;/span&gt;
+
+&lt;span class=&quot;hljs-comment&quot;&gt;; If the character-counting snippet ends in the middle of a word, I use this to jump to the beginning of that word.&lt;/span&gt;
+&lt;span class=&quot;hljs-label&quot;&gt;#j::&lt;/span&gt;
+SendInput, ^{Left}
+&lt;span class=&quot;hljs-keyword&quot;&gt;Return&lt;/span&gt;
+
+&lt;span class=&quot;hljs-comment&quot;&gt;; This inserts a hard return. I customised this script for Excel, and in Excel you insert a carriage return with alt + Enter. The &quot;!&quot; means the alt key, and {Enter} means the Enter key. &lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; If you wanted to insert, say, &quot;/n&quot; as a control code for carriage returns, you'd customize the second line to look like this: &quot;Send, /n&quot;&lt;/span&gt;
+&lt;span class=&quot;hljs-label&quot;&gt;#n::&lt;/span&gt;
+Send, !{Enter}
+&lt;span class=&quot;hljs-keyword&quot;&gt;Return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With this collection of commands, I can easily count characters and then insert carriage returns (or control characters) when needed, using a collection of three keys—h, j, and n. This makes the process of checking a line after its been written far simpler.&lt;/p&gt;
+&lt;p&gt;The syntax for a script like this is fairly simple:&lt;/p&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;autohotkey&quot;&gt;&lt;span class=&quot;hljs-label&quot;&gt;#h::&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As the name would suggest, pretty much everything you do with AHK is triggered using hotkeys, so the first part of every script is defining one. In this case, there are three parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt; This is a modifier, in this case the Windows key. Generally modifiers are for the &amp;quot;special&amp;quot; keys, i.e. alt, shift, control, and Windows. Putting one next to another key means you&amp;#39;re sending a signal that&amp;#39;s the modifier plus that key. For instance, &lt;code&gt;^v&lt;/code&gt; would be the command you know as &amp;quot;paste.&amp;quot; Modifiers only affect the very next key. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt; This is the key I&amp;#39;m using for this definition.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;::&lt;/code&gt; These just mean &amp;quot;We&amp;#39;ve finished defining our hotkey, shit is about to get real.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;autohotkey&quot;&gt;SendInput, {Right &lt;span class=&quot;hljs-number&quot;&gt;38&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is the meat of the snippet, and it&amp;#39;s essnetially comprised of two parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SendInput&lt;/code&gt; This is just a command that tells AutoHotKey &amp;quot;Whatever comes after this is what I want you to send to Windows.&amp;quot; There are actually five different send types (Send, SendRaw, SendInput, SendPlay, SendEvent). Generally we&amp;#39;ll use &amp;quot;SentInput&amp;quot; becuase it&amp;#39;s fast and buffers mouse and keyboard input when its triggered (which means it can&amp;#39;t be interrupted).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{Right 38}&lt;/code&gt; Here is what we&amp;#39;re sending. In this case, it&amp;#39;s &amp;#8594;, 38 times. Enclosing &amp;quot;Right&amp;quot; in brackets tells AutoHotKey that it should treat it as a command of some sort, and not just print &amp;quot;{Right}&amp;quot;. If you &lt;em&gt;do&lt;/em&gt; just want to print text, that&amp;#39;s even easier: The line &lt;code&gt;SendInput, I&amp;#39;m faster than anybody!&lt;/code&gt; would spit out &amp;quot;I&amp;#39;m faster than anybody.&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;autohotkey&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;Return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Return&lt;/code&gt; should &lt;em&gt;always&lt;/em&gt; appear the end of your snippet—it&amp;#39;s what tells AHK &amp;quot;All right, we&amp;#39;re done here, stop doing stuff.&amp;quot; Without it, AHK will continue to execute. For instance, if I forgot to put &lt;code&gt;Return&lt;/code&gt; at the end of my character counting snippet, once it had finished moving the cursor 48 times, it would then jump the cursor to the beginning of the current word (as per the next snippet).&lt;/p&gt;
+&lt;p&gt;You can use this basic fomula to automate just about any repetetive task. I&amp;#39;ve also used it to quicky insert character names so that I don&amp;#39;t run the risk of messing up the spelling.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/article&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+		&lt;/section&gt;
+
+		&lt;!-- Footer --&gt;
+		&lt;footer&gt;
+			&lt;p class=&quot;pull-left&quot;&gt;&amp;copy; Ben Bateman 2014&lt;/p&gt;
+			&lt;p class=&quot;pull-right&quot;&gt;
+				&lt;!-- This website was last updated at 2014-02-15T06:31:53.233Z --&gt;
+			&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;&lt;!-- /container --&gt;
+
+	&lt;!-- Scripts --&gt;
+	&lt;script &gt;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5369993-2');
+ga('send', 'pageview');&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/twitter-bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Localization Questions, pt. 1</title>
+			<link href="http://belisarius.github.io/game-site///posts/localization-pt-1"/>
+			<updated>2014-02-06T08:00:00.000Z</updated>
+			<id>http://belisarius.github.io/game-site///posts/localization-pt-1</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Localization Questions, pt. 1 | Games&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Ben writes stuff for a living, mostly for video games, so here he's going to write some stuff ABOUT games.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;video games, writing, thoughts, games, ben bateman&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Ben Bateman&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.63.3&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+		&lt;link rel=&quot;shortcut icon&quot; href=&quot;images/icons/favicon.ico&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;images/icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;images/icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;images/icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;images/icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/twitter-bootstrap.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/foundation.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- Menu --&gt;
+	&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;navbar-header&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;/button&gt;
+				&lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Games&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+				&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;&lt;!--/.navbar-collapse --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Content --&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;!-- Content --&gt;
+		&lt;section id=&quot;content&quot; class=&quot;content&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post clearfix&quot;&gt;
+	&lt;h1&gt;Localization Questions, pt. 1&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;p&gt;Yesterday on &lt;a href=&quot;http://twitter.com/benspants&quot;&gt;twitter&lt;/a&gt; I invited people to submit questions to my &lt;a href=&quot;http://ask.fm/benspants&quot;&gt;ask.fm&lt;/a&gt;, and got a couple of interesting localization ones. I thought they might be interesting enough to re-post here. Some of them are from yesterday, some are...somewhat older.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I always found the Ace Attorney localizations silly, where they took an obviously Japanese setting, called it Los Angeles, and gave everyone English names. However, the punny names, etc, wouldn&amp;#39;t work at all for a Western audience if they were kept Japanese. How would you handle a project like that?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/loc_p_1/santa.png&quot; class=&quot;pull-left img-rounded&quot; title=&quot;Santa&quot; alt=&quot;Santa from Aksys Games and Chunsoft's 'Zero Escape: Nine Hourse, Nine Persons, Nine Doors'&quot;&gt;
+Depends on the source material. In 999, for instance, we changed all the names (well, except for Santa and, obviously, Seven) because each of their names was tied to their number in some way, and there would be no way to explain the Japanese connections in the English translation without it being extremely awkward. Santa has to explain &amp;quot;san&amp;quot; (there was no way around that) and it&amp;#39;s weird. In this case, the clear answer was to change the names, and elements of the setting.&lt;/p&gt;
+&lt;p&gt;I debating doing the same thing with Sweet Fuse (and actually came up with names for a few of them: Shidou was Arthur Knight, Wakasa was Justin Young, Meoshi was Preston Keyes, Shirabe was Walker Hunt) since in Japanese their names all have a connection to who they are, but ultimately we decided not to do that. Their name meanings were basically just &amp;quot;fun&amp;quot;—not integral to the plot, as they arguably are in 999. Plus, the game makes it fairly clear that it&amp;#39;s set in Japan, so westernizing the names would have meant an additional expanding cloud of changes, and at that point you start to wonder if it&amp;#39;s worth it.&lt;/p&gt;
+&lt;p&gt;For something like Ace Attorney, I agree with the localizers that the names, etc, need to be localized. The tone and humor of the game would be irreparably damaged by, say, a protagonist named Ryūichi Naruhodō. Japanese audiences get that joke, but to a western audience it means effectively nothing, and attempting to explain the joke is awkward, takes the player out of the experience, and, I mean, once you have to explain a joke, it&amp;#39;s not really that funny is it?&lt;/p&gt;
+&lt;p&gt;The one thing I might shy away from doing is setting it in a specific, real place. If we&amp;#39;re moving the game from Japan and changing all the names, setting it in &amp;quot;Los Angeles&amp;quot; seems a little weird. I&amp;#39;d probably prefer to go with the tone of the game and set it in, say, the city of &amp;quot;Las Diablos&amp;quot; or something. It almost feels weirdly like...appropriation, I guess? But that&amp;#39;s kind of a nit-pick.&lt;/p&gt;
+&lt;p&gt;In general, my feeling is that if the game, its plot, and its themes depend very heavily on their location (in this case, generally that means Japan) then names and the like should probably be left alone. To wit: Hakuoki, where all character names were left unchanged. (The stuff we DID change in Hakuoki is another subject, one which I&amp;#39;ve covered before over on my &lt;a href=&quot;http://keikakumeansplan.tumblr.com/post/29181576151/localization-choices-for-the-terms-rasetsu-and&quot; title=&quot;Localization Choices for the Terms &amp;quot;Rasetsu&amp;quot; and &amp;quot;Ochimizu&amp;quot; from Hakuoki&quot;&gt;localization blog&lt;/a&gt;) If the location is less important, and the nuances of the names are more important (to wit: 999), then change away.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Do Japanese game devs/pubs you&amp;#39;ve worked with want to check your localizations, or do they trust that you did a good job? Also, do they ask for specific things to be localized in a certain way? I&amp;#39;m thinking about how NISA were told by Spike Chunsoft to not change Monokuma to Monobear in Danganronpa.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Generally no, in my experience there hasn&amp;#39;t been a lot of oversight from the Japanese publisher/developer when it comes to the localization, at least not on the projects I&amp;#39;ve been involved with. (Although when it comes to the marketing...) There have been one or two instances where we were specifically asked to do or not do a particular thing, but often than had more to do with copyrights and trademarks than anything else.&lt;/p&gt;
+&lt;p&gt;I usually do, however, ask the developer when I want to make a significant change or I&amp;#39;m unsure about an important detail (i.e., someone&amp;#39;s name, clarify the function or nature of an item, etc) to sort of preempt this. They do essentially have final say over what goes out, and if they decided they DIDN&amp;#39;T like something it could make my life very unpleasant. Generally, though, the developers I&amp;#39;ve worked with have been pretty helpful—Chunsoft and Uchikoshi especially were extremely responsive, accommodating, and helpful during the production of both 999 and VLR.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On the topic of G-OLM: are you conversant enough in Cockney to just be able to write like that, or did you have to do research? Did you consider using any other dialects/accents?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/loc_p_1/golm.png&quot; class=&quot;pull-right img-rounded&quot; title=&quot;G-OLM&quot; alt=&quot;G-OLM from Aksys Games and Spike-Chunsoft's 'Zero Escape: Virtue's Last Reward'&quot;&gt;
+My knowledge of Cockney is pretty much limited to watching a few British movies, mainly Snatch. So, no, I wouldn&amp;#39;t consider myself conversant. I did do a fair amount of research when I was writing that section, mostly on Cockney rhyming slang. (i.e. &amp;quot;lords and peers&amp;quot; -&amp;gt; &amp;quot;ears&amp;quot;) I wanted to put in more of the rhyming slang (it&amp;#39;s cool as heck), but &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It would have gotten obtuse and confusing FAST&lt;/li&gt;
+&lt;li&gt;I wasn&amp;#39;t honestly sure I was good enough at it to make that convincing&lt;/li&gt;
+&lt;li&gt;It started to feel a little...exploitative, I guess&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The actual delivery was all the voice actor—we specifically chose someone who demonstrated that he had knowledge of Cockney on his demo reel. And he did an amazing job!
+I settled on Cockney for three reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Heavy accents in J media are often localized into some manner of accent from the southern United States, for a lot of different reasons, but the end result is that by this point that&amp;#39;s kind of cliche and played out, so I didn&amp;#39;t want to use a southern accent. True, the specific accent he had (Kawachi dialect) is something that would probably be considered sort of &amp;quot;hick-ish&amp;quot; in Japan, and I could have gone with that sort of American accent, but that seemed boring, and part of the point of G-OLM&amp;#39;s accent is that it comes out of &lt;em&gt;nowhere&lt;/em&gt;—its &amp;quot;extremeness&amp;quot; should surprise you (nearly everyone in the office who understands Japanese started to laugh awkwardly as soon as they heard him start to talk in Japanese). I figured Cockney would have a similar sort of effect on American audience. &lt;/li&gt;
+&lt;li&gt;An American audience would be less likely to notice/get pissed off if I screwed it up&lt;/li&gt;
+&lt;li&gt;I like Cockney&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I haven&amp;#39;t heard any reports from people who are &lt;em&gt;actually&lt;/em&gt; familiar with Cockney telling me I totally messed it up, but the English dub isn&amp;#39;t available in Europe, so...&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As you&amp;#39;re someone in the industry, what&amp;#39;s your stance on bringing VNs with erotic content to the West? Not necessarily in the context of Aksys, but just in the big picture, like how they should be handled. Should the sex scenes be cut out? Left in? Offered separately?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yeah, so, this is kind of a big, complicated question that touches on a lot of stuff, but first I’m going to sort of set some of the terms of what I’m going to say, so there’s no confusion.&lt;/p&gt;
+&lt;p&gt;I can only guess at what it means to you to say &amp;quot;VNs with erotic content,&amp;quot; but for the purposes of what I’m about to say, I’m going to assume that means anything where sexual intercourse is displayed in a graphic, explicit manner (and yes, it’s still graphic and explicit if there are mosaics). This includes, of course, penile-vaginal penetrative sex, but also includes oral, anal, and all sorts of other fascinating sexual maneuvers that I either can’t think of or am too embarrassed to describe.&lt;/p&gt;
+&lt;p&gt;I’d also like to make it clear that I understand there are different kinds of erotic VNs—those were the sex works ostensibly in service of a larger narrative, and those were the whole point is just to see a couple of people going at it. Unfortunately 99% of the time, this is going to be an academic distinction: If we see people having sex in an explicit way (roughly approximated: We see genitals being manipulated with the intent of causing sexual pleasure to one or more parties) then that puts it into a particular class of media that most people will just call “porn.” It is certainly possible, and possibly desirable, that eventually society will move beyond this particular view, but the chances of that happening in my lifetime are slim to none.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;SO&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;First there are a couple things to consider business-wise:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you publish, create, or otherwise distribute erotic VNs, you will immediately find yourself in a very small niche that is very difficult to get out of.&lt;/li&gt;
+&lt;li&gt;You will get a reputation as a porn peddler.&lt;/li&gt;
+&lt;li&gt;The distribution avenues available to you are extremely limited.&lt;/li&gt;
+&lt;li&gt;Localizing any kind of visual novel is a lot of work for your translators and/or editors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/images/loc_p_1/mosaic.png&quot; class=&quot;pull-left img-rounded&quot; title=&quot;Lewd&quot; alt=&quot;A lewd mosaic&quot;&gt;
+What this boils down to is that the profit margins are going to be exceedingly slim. Only a very small subset of gamers will even considering buying what you’re selling, and it will be difficult to sell it regardless: You can’t publish on any console (AFAIK the NA branches of the big three will never let erotic content on their platforms), and larger DD services for PC (i.e., Steam) won’t let you on for the same reasons. Most retail outlets won’t stock your product either. The few services that will take you have much smaller distribution, and can enforce much worse terms for you if they want, since they’re the only game in town. Obviously it’s not an impossible business model to manage—JAST and Mangagamer have been publishing erotic VNs for a while now—but it’s risky, gives you a bad reputation, and has no clear payoff. Plus, if you decide it was a bad idea, you’re kind of stuck: Trying to throw off the reputation of porn peddler isn’t going to be easy. Additionally, if you want any kind of quality you’re going to have to spend a lot of time (read: money) getting something approaching &amp;quot;good&amp;quot; from your text.&lt;/p&gt;
+&lt;p&gt;In other words, I understand why most publishers won’t touch them with a ten-foot pole. If I ran a publishing house, I sure wouldn’t.&lt;/p&gt;
+&lt;p&gt;But I haven’t really addressed your questions directly, so let me do that: &lt;/p&gt;
+&lt;p&gt;Cutting out the sex scenes vs. leaving them in, given the current market, is a pretty simple answer, I think: Leave them in. If you are a small publisher, willing to publish erotic material, then you lose nothing by doing so. If you’re slightly larger, then whatever you might gain in additional market-share will be quickly offset by the uproar when fans discover that the sex has been cut. Even if potential customers don’t really care whether there’s sex in there or not, it will become clear to all that your game is a &amp;quot;porn game,&amp;quot; which will make it much more difficult to sell—regardless of whether or not there’s any porn in it. Visual novels of any sort are already a tough sell in the west, and having the heavy stigma of porn directly attached to one is not going to do you any favors.&lt;/p&gt;
+&lt;p&gt;As far as my personal feelings, I don’t particularly care for erotic VNs. I have a hard time imagining how a story is improved by explicit, titillating sex. I can see how porn can be improved by adding a good story, but that doesn’t seem to be how most people asking for erotic VNs frame the argument. In my opinion, localizing (or writing) erotic VNs has too many downsides (stigma, small market, confusing narrative goals) and a profit margin that’s far too slim. While I’m not necessarily opposed to sex, even explicit sex, in a narrative anywhere, I’d like to see it either serve a purpose, or at least demonstrate healthy sexual behavior—neither of which are things I’m convinced the vast majority of erotic VNs do. Obviously there’s plenty of room for argument there, and my knowledge is certainly very limited, but I’m not saying no one should do them, just that I don’t really have a personal interest in doing so.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/article&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+		&lt;/section&gt;
+
+		&lt;!-- Footer --&gt;
+		&lt;footer&gt;
+			&lt;p class=&quot;pull-left&quot;&gt;&amp;copy; Ben Bateman 2014&lt;/p&gt;
+			&lt;p class=&quot;pull-right&quot;&gt;
+				&lt;!-- This website was last updated at 2014-02-15T06:31:53.233Z --&gt;
+			&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;&lt;!-- /container --&gt;
+
+	&lt;!-- Scripts --&gt;
+	&lt;script &gt;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5369993-2');
+ga('send', 'pageview');&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/twitter-bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>The History of Otome</title>
+			<link href="http://belisarius.github.io/game-site///posts/otome-101"/>
+			<updated>2014-02-03T08:00:00.000Z</updated>
+			<id>http://belisarius.github.io/game-site///posts/otome-101</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;The History of Otome | Games&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Ben writes stuff for a living, mostly for video games, so here he's going to write some stuff ABOUT games.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;video games, writing, thoughts, games, ben bateman&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Ben Bateman&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.63.3&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+		&lt;link rel=&quot;shortcut icon&quot; href=&quot;images/icons/favicon.ico&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;images/icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;images/icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;images/icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;images/icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/twitter-bootstrap.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/foundation.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- Menu --&gt;
+	&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;navbar-header&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;/button&gt;
+				&lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Games&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+				&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;&lt;!--/.navbar-collapse --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Content --&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;!-- Content --&gt;
+		&lt;section id=&quot;content&quot; class=&quot;content&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post clearfix&quot;&gt;
+	&lt;h1&gt;The History of Otome&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;p&gt;&lt;img src=&quot;/images/otome/otome.png&quot; class=&quot;pull-left img-rounded&quot; title=&quot;Angelique SNES&quot; alt=&quot;Angelique SNES screenshot&quot;&gt;
+A friend of mine, the legendary &lt;a href=&quot;http://twitter.com/acosmos&quot;&gt;@acosmos&lt;/a&gt;, just published a great article (hopefully the first of many) about the history of otome games. I was lucky enough to get to work on two of the games she mentions (&lt;a href=&quot;http://sweet-fuse.com/&quot; title=&quot;Sweet Fuse&quot;&gt;Sweet Fuse&lt;/a&gt; and &lt;a href=&quot;http://hakuoki.com/&quot; title=&quot;Hakuoki&quot;&gt;Hakuoki&lt;/a&gt;), and and it&amp;#39;s been awesome to see otome games really start to take off in the west. There&amp;#39;s always been a significant fanbase, but now some of the games are actually getting offical translations, which is pretty cool.&lt;/p&gt;
+&lt;p&gt;I found this piece particularly interesting because it opened my eyes to a number of things I&amp;#39;d been previous unaware of—perhaps most notably the &amp;quot;Ruby Party&amp;quot; team and Angelique. I strongly recommend anyone with an interest in video games, or video game history, check it out, as it provides a great look into the genesis of a genre that often overlooked.&lt;/p&gt;
+&lt;p&gt;You can find the article &lt;a href=&quot;http://acosmos.net/post/75479460804/otome-games-101-origins&quot; title=&quot;Otome 101&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/article&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+		&lt;/section&gt;
+
+		&lt;!-- Footer --&gt;
+		&lt;footer&gt;
+			&lt;p class=&quot;pull-left&quot;&gt;&amp;copy; Ben Bateman 2014&lt;/p&gt;
+			&lt;p class=&quot;pull-right&quot;&gt;
+				&lt;!-- This website was last updated at 2014-02-15T06:31:53.233Z --&gt;
+			&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;&lt;!-- /container --&gt;
+
+	&lt;!-- Scripts --&gt;
+	&lt;script &gt;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5369993-2');
+ga('send', 'pageview');&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/twitter-bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Changes</title>
+			<link href="http://belisarius.github.io/game-site///posts/changes"/>
+			<updated>2014-01-30T08:00:00.000Z</updated>
+			<id>http://belisarius.github.io/game-site///posts/changes</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Changes | Games&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Ben writes stuff for a living, mostly for video games, so here he's going to write some stuff ABOUT games.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;video games, writing, thoughts, games, ben bateman&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Ben Bateman&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.63.3&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+
+	&lt;!-- Icons --&gt;
+		&lt;link rel=&quot;shortcut icon&quot; href=&quot;images/icons/favicon.ico&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;images/icons/apple-touch-icon-144-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;images/icons/apple-touch-icon-114-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;images/icons/apple-touch-icon-72-precomposed.png&quot;&gt;
+		&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;images/icons/apple-touch-icon-57-precomposed.png&quot;&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/twitter-bootstrap.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;/styles/foundation.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- Menu --&gt;
+	&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;navbar-header&quot;&gt;
+				&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;/button&gt;
+				&lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Games&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+				&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;&lt;!--/.navbar-collapse --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Content --&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;!-- Content --&gt;
+		&lt;section id=&quot;content&quot; class=&quot;content&quot;&gt;
+			&lt;article id=&quot;post&quot; class=&quot;post clearfix&quot;&gt;
+	&lt;h1&gt;Changes&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;p&gt;&lt;img src=&quot;/images/changes/portland-skyline.jpg&quot; class=&quot;pull-left img-rounded&quot;&gt;
+I&amp;#39;ve worked at &lt;a href=&quot;http://www.aksysgames.com&quot;&gt;Aksys Games&lt;/a&gt; as a &lt;a href=&quot;http://portfolio.benspants.com/term/localization-editor/&quot;&gt;localization editor&lt;/a&gt; for about six years now. I got this job more or less right out of college—after a short stint as a contract film editor. It&amp;#39;s been fun, and I&amp;#39;ve done &lt;a href=&quot;http://portfolio.benspants.com/game/zero-escape-virtues-last-reward/&quot; title=&quot;Virtue&amp;#39;s Last Reward&quot;&gt;a lot&lt;/a&gt; &lt;a href=&quot;http://portfolio.benspants.com/game/nine-hours-nine-persons-nine-doors/&quot; title=&quot;Nine Hours, Nine Persons, Nine Doors&quot;&gt;of work&lt;/a&gt; &lt;a href=&quot;http://portfolio.benspants.com/game/hakuoki-demon-of-the-fleeting-blossom/&quot; title=&quot;Hakuoki: Demon of the Fleeting Blossom&quot;&gt;that I&amp;#39;m proud of&lt;/a&gt;. I&amp;#39;ll also really miss the people I&amp;#39;ve worked with, who&amp;#39;ve become some of my best friends. I&amp;#39;m not very good at talking about my feelings in an intelligent, human way, but my co-workers were easily the best part of my job. The second best was getting the oportunity to help bring over things that people enjoyed. Working at Aksys gave me the chance to be a part of something that made a lot people happy (not all the time, but, you know, enough) which is an oportunity I was very, very lucky to have. &lt;/p&gt;
+&lt;p&gt;The plan, at least, is to keep working in video games: Localization is what I&amp;#39;ve got experience in, so I&amp;#39;ll likely be doing that for a while, but hopefully before too long I&amp;#39;ll be making my own games. Maybe &lt;a href=&quot;http://gakuennecro.tumblr.com/&quot;&gt;Gakuen Necro&lt;/a&gt; and Lumberjaction and all the others will finally see the light of day! Maybe if I&amp;#39;m especially fortunately, I&amp;#39;ll get another chance to make stuff that you enjoy.&lt;/p&gt;
+&lt;p&gt;In any event, I&amp;#39;ve wanted to start up a blog to talk about games for a long time, and I figured since I&amp;#39;m turning my life upside down now is the perfect time to give myself &lt;em&gt;another&lt;/em&gt; thing to do.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/article&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+		&lt;/section&gt;
+
+		&lt;!-- Footer --&gt;
+		&lt;footer&gt;
+			&lt;p class=&quot;pull-left&quot;&gt;&amp;copy; Ben Bateman 2014&lt;/p&gt;
+			&lt;p class=&quot;pull-right&quot;&gt;
+				&lt;!-- This website was last updated at 2014-02-15T06:31:53.233Z --&gt;
+			&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;&lt;!-- /container --&gt;
+
+	&lt;!-- Scripts --&gt;
+	&lt;script &gt;(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5369993-2');
+ga('send', 'pageview');&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/vendor/twitter-bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;&lt;script defer=&quot;defer&quot;  src=&quot;/scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+</feed>

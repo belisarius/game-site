@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		 More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>AutotHotKey and Localization | Games</title>
+	<meta name="description" content="Ben writes stuff for a living, mostly for video games, so here he's going to write some stuff ABOUT games." />
+	<meta name="keywords" content="video games, writing, thoughts, games, ben bateman" />
+	<meta name="author" content="Ben Bateman" />
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.63.3" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- Icons -->
+		<link rel="shortcut icon" href="images/icons/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="images/icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="/styles/twitter-bootstrap.css" /><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/styles/foundation.css" />
+</head>
+<body>
+	<!-- Menu -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Games</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					
+				</ul>
+			</div><!--/.navbar-collapse -->
+		</div>
+	</div>
+
+	<!-- Content -->
+	<div class="container">
+		<!-- Content -->
+		<section id="content" class="content">
+			<article id="post" class="post clearfix">
+	<h1>AutotHotKey and Localization</h1>
+	<div class="post-content"><p>Many years ago, one of my co-workers at <a href="http://www.aksysgames.com" title="Aksys Games Localization, Inc.">Aksys</a> introdced me to a piece of software called <a href="http://www.autohotkey.com">AutoHotKey</a>. The simple description of <abbr title="AutoHotKey">AHK</abbr> is that it&#39;s a very simple scripting language that gives you simple access to a lot of stuff, most importantly stuff like keypresses.</p>
+<p>After discovering AHK, I&#39;ve found it to be indispensible for my localization work. There are a lot of tasks that it can easily automate, which speeds up my work and reduces the chance for errors. For instance, here&#39;s one of the scripts I wrote for my current project:</p>
+<pre class="highlight"><code class="autohotkey"><span class="hljs-label">#j::</span>
+SendInput, ^{Left}
+<span class="hljs-keyword">Return</span>
+</code></pre>
+<p>Basically, when I press Windows+j, AHK tells windows I pressed Control+&#8592;. This jumps the cursor to the beginning of the current word. That might not seem all that interesting in and of itself (after all, I could just press Control+&#8592;), but I combine it with two other scripts that make it much more useful in the context of localization editing.</p>
+<p>As anyone who&#39;s done video game localization knows, practically every project will have character limits. As you might guess, these are limits on how many characters (i.e. letters, numbers, punctuation marks, etc) you can have in a given section of text. Sometimes, especially when a game uses a <a href="http://courses.engr.illinois.edu/ece390/resources/varfont/varfont.html">variable-width font</a> this is based soley on space, and you often have to eyeball how much space you have (always stressful), but much more frequently you&#39;re given a set number that defines how many characters you can have per line. </p>
+<p>Since most translation and editing is done in Excel, sometimes you can just use <code>LEN()</code> and get the number of characters that way, but usually multiple lines are squished into a cell, and then <code>LEN()</code> won&#39;t work, since it just counts <em>all</em> the characters in the cell. You can count characters by pressing &#8594; and counting how many times, but since character limits can range between 20 and 50 characters, that gets old fast. Plus, once you&#39;ve counted all your characters, you need to insert something that indicates a new line, whether that&#39;s a hard return or something like <code>/n</code>.</p>
+<p>Enter AutoHotKey!</p>
+<pre class="highlight"><code class="autohotkey"><span class="hljs-comment">; This is for counting characters (38) in this case.</span>
+<span class="hljs-label">#h::</span> <span class="hljs-comment">; This sets the shortcut key combination—in this case, it's Windows key (#) and h.</span>
+SendInput, {Right <span class="hljs-number">38</span>} <span class="hljs-comment">; "SendInput" basically means "send this key or key combination". "{Right 38}" means the right arrow key, and to send it 38 times (the number of characters I'm allowed per line.)</span>
+<span class="hljs-keyword">Return</span> <span class="hljs-comment">; End each snippet with "Return" or it'll just keep running.</span>
+
+<span class="hljs-comment">; If the character-counting snippet ends in the middle of a word, I use this to jump to the beginning of that word.</span>
+<span class="hljs-label">#j::</span>
+SendInput, ^{Left}
+<span class="hljs-keyword">Return</span>
+
+<span class="hljs-comment">; This inserts a hard return. I customised this script for Excel, and in Excel you insert a carriage return with alt + Enter. The "!" means the alt key, and {Enter} means the Enter key. </span>
+<span class="hljs-comment">; If you wanted to insert, say, "/n" as a control code for carriage returns, you'd customize the second line to look like this: "Send, /n"</span>
+<span class="hljs-label">#n::</span>
+Send, !{Enter}
+<span class="hljs-keyword">Return</span>
+</code></pre>
+<p>With this collection of commands, I can easily count characters and then insert carriage returns (or control characters) when needed, using a collection of three keys—h, j, and n. This makes the process of checking a line after its been written far simpler.</p>
+<p>The syntax for a script like this is fairly simple:</p>
+<pre class="highlight"><code class="autohotkey"><span class="hljs-label">#h::</span>
+</code></pre>
+<p>As the name would suggest, pretty much everything you do with AHK is triggered using hotkeys, so the first part of every script is defining one. In this case, there are three parts:</p>
+<ul>
+<li><code>#</code> This is a modifier, in this case the Windows key. Generally modifiers are for the &quot;special&quot; keys, i.e. alt, shift, control, and Windows. Putting one next to another key means you&#39;re sending a signal that&#39;s the modifier plus that key. For instance, <code>^v</code> would be the command you know as &quot;paste.&quot; Modifiers only affect the very next key. </li>
+<li><code>h</code> This is the key I&#39;m using for this definition.</li>
+<li><code>::</code> These just mean &quot;We&#39;ve finished defining our hotkey, shit is about to get real.&quot;</li>
+</ul>
+<pre class="highlight"><code class="autohotkey">SendInput, {Right <span class="hljs-number">38</span>}
+</code></pre>
+<p>This is the meat of the snippet, and it&#39;s essnetially comprised of two parts:</p>
+<ul>
+<li><code>SendInput</code> This is just a command that tells AutoHotKey &quot;Whatever comes after this is what I want you to send to Windows.&quot; There are actually five different send types (Send, SendRaw, SendInput, SendPlay, SendEvent). Generally we&#39;ll use &quot;SentInput&quot; becuase it&#39;s fast and buffers mouse and keyboard input when its triggered (which means it can&#39;t be interrupted).</li>
+<li><code>{Right 38}</code> Here is what we&#39;re sending. In this case, it&#39;s &#8594;, 38 times. Enclosing &quot;Right&quot; in brackets tells AutoHotKey that it should treat it as a command of some sort, and not just print &quot;{Right}&quot;. If you <em>do</em> just want to print text, that&#39;s even easier: The line <code>SendInput, I&#39;m faster than anybody!</code> would spit out &quot;I&#39;m faster than anybody.&quot;</li>
+</ul>
+<pre class="highlight"><code class="autohotkey"><span class="hljs-keyword">Return</span>
+</code></pre>
+<p><code>Return</code> should <em>always</em> appear the end of your snippet—it&#39;s what tells AHK &quot;All right, we&#39;re done here, stop doing stuff.&quot; Without it, AHK will continue to execute. For instance, if I forgot to put <code>Return</code> at the end of my character counting snippet, once it had finished moving the cursor 48 times, it would then jump the cursor to the beginning of the current word (as per the next snippet).</p>
+<p>You can use this basic fomula to automate just about any repetetive task. I&#39;ve also used it to quicky insert character names so that I don&#39;t run the risk of messing up the spelling.</p>
+</div>
+
+</article>
+
+<footer>
+	
+</footer>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p class="pull-left">&copy; Ben Bateman 2014</p>
+			<p class="pull-right">
+				<!-- This website was last updated at 2014-02-15T06:31:53.233Z -->
+			</p>
+		</footer>
+	</div><!-- /container -->
+
+	<!-- Scripts -->
+	<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5369993-2');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap/dist/js/bootstrap.min.js"></script><script defer="defer"  src="/scripts/script.js"></script>
+</body>
+</html>
